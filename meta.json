@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "name": "MdiEx v3.0",
+  "description": "LayerCache (9) + NRAMV",
+  "author": "Samsung + Soula + Alvaro",
+  "packageVersion": "20",
+  "vendor": "SAMSUNG + Mesa3D",
+  "driverVersion": "LayerCache + Nramv",
+  "minApi": 34,
+  "nramv": {
+    "enabled": true,
+    "libraryName": "libnramv.so",
+    "version": "1.0",
+    "autoProfile": true,
+    "defaultProfile": "MEDIUM"
+  }
+}
