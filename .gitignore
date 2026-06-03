@@ -1,0 +1,16 @@
+# OS/editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Build outputs
+build/
+out/
+*.o
+*.a
+*.tmp
+*.log
+
+# Keep shared libraries tracked intentionally for this package repo.
+!*.so
