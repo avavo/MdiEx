@@ -25,9 +25,6 @@ vortek-layer/
 docs/
 ├── INSTALL.md
 └── STRUCTURE.md
-
-releases/
-└── MdiEx_Nativo_v3.0.zip
 ```
 
 ## Core package
@@ -42,12 +39,6 @@ releases/
 ## Optional files
 
 The files inside `optional-drivers/` and `vortek-layer/` are separated from the native package so users can clearly see what is core and what is optional.
-
-## Recommended GitHub layout
-
-Use this repository for exposed files, documentation and configuration. Put user-ready ZIPs under GitHub Releases.
-
-Do not present a ZIP-only repository as fully open-source unless the actual editable source code is also exposed. A ZIP-only repo is technically visible, but socially it looks like a locked door with a window painted on it.
 
 ## Status
 
