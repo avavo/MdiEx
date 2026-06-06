@@ -1,17 +1,71 @@
 {
   "schemaVersion": 1,
-  "name": "MdiEx v3.0",
-  "description": "LayerCache (9) + NRAMV",
-  "author": "Samsung + Soula + Alvaro",
-  "packageVersion": "20",
+  "name": "MdiEx 2200 Vortek v3.2 Step 48.2",
+  "description": "MdiEx 2200 + Vortek Step 48.2 WineVulkan Stability Diagnostics + NRAMV",
+  "author": "Samsung + Vortek + Alvaro",
+  "packageVersion": "32-step-48-2",
   "vendor": "SAMSUNG + Mesa3D",
-  "driverVersion": "LayerCache + Nramv",
+  "driverVersion": "Vortek Step 48.2 WineVulkan Stability Diagnostics + NRAMV 1.4.2 + Xclipse 2200",
   "minApi": 34,
+  "libraryName": "vulkan.xclipse2.0.0.so",
+  "layerLibrary": "libVkLayer_VortekXclipse.so",
+  "layerName": "VK_LAYER_VORTEK_XCLIPSE",
   "nramv": {
     "enabled": true,
     "libraryName": "libnramv.so",
-    "version": "1.0",
+    "version": "1.4.2",
     "autoProfile": true,
     "defaultProfile": "MEDIUM"
-  }
+  },
+  "compatibility": {
+    "step": "48.2",
+    "focus": "WineVulkan Stability Diagnostics",
+    "basedOn": "Step 48.2 WineVulkan Stability Diagnostics BuildFix",
+    "targets": [
+      "Samsung Exynos 2200 / Xclipse 920-class devices",
+      "Android Vulkan loader",
+      "Winlator / WineVulkan / DXVK",
+      "GameNative",
+      "Eden"
+    ],
+    "winlatorSafe": {
+      "env": "VORTEK_WINLATOR_SAFE=1",
+      "androidSysprop": "debug.vortek.winlator_safe=1",
+      "actions": [
+        "disable ASTC experimental/advertise",
+        "disable BCn virtualization",
+        "disable virtual copy expansion",
+        "disable cache warmup",
+        "disable microbenchmark",
+        "disable NRamV auto flush/bridge",
+        "enable WineVulkan result diagnostics"
+      ]
+    },
+    "wineVulkanDiagnostics": {
+      "env": "VORTEK_WINEVULKAN_DIAGNOSTICS=1",
+      "androidSysprop": "debug.vortek.winevulkan_diagnostics=1",
+      "wrappers": [
+        "vkCreateComputePipelines",
+        "vkQueueSubmit",
+        "vkQueueSubmit2",
+        "vkQueueSubmit2KHR"
+      ]
+    },
+    "astcExperimental": {
+      "default": "probe-only / no LDR advertise",
+      "advertiseLdrDefault": false
+    },
+    "variant": "Xclipse 2200"
+  },
+  "step": {
+    "id": "48.2",
+    "name": "WineVulkan Stability Diagnostics",
+    "description": "Adds diagnostic passthrough wrappers for WineVulkan/DXVK pipeline and queue-submit failures plus a conservative Winlator Safe preset."
+  },
+  "notes": [
+    "Updated from MdiEx Vortek v3.2 to Vortek Step 48.2.",
+    "Preserves libnramv.so from the original MdiEx package.",
+    "Uses the Step 48.2 Vortek layer and manifest.",
+    "Samsung Vulkan driver payload is kept aligned with the Step 48.2 package."
+  ]
 }

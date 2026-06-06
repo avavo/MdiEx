@@ -5,10 +5,15 @@
     "type": "GLOBAL",
     "library_path": "libVkLayer_VortekXclipse.so",
     "api_version": "1.3.0",
-    "implementation_version": "1",
-    "description": "Vortek Xclipse in-process BCn compatibility wrapper",
+    "implementation_version": "482",
+    "description": "Vortek Xclipse Step 48.2 WineVulkan Stability Diagnostics layer for Samsung Xclipse Vulkan",
     "disable_environment": {
-      "DISABLE_VORTEK_XCLIPSE_LAYER": "1"
+      "DISABLE_VORTEK_XCLIPSE_LAYER": "1",
+      "VORTEK_DISABLE": "1",
+      "VORTEK_LOADER_COMPAT_DISABLE": "1"
+    },
+    "enable_environment": {
+      "ENABLE_VORTEK_XCLIPSE_LAYER": "1"
     }
   }
 }
